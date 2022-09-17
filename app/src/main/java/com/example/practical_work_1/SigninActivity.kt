@@ -17,7 +17,7 @@ class SigninActivity : AppCompatActivity() {
     }
 
     fun registration(view: View) {
-        val intent = Intent(this,PatchActivity::class.java)
+        val intent = Intent(this,SignupActivity::class.java)
         startActivity(intent)
     }
 }
