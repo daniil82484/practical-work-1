@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val timer = object : CountDownTimer(3000,1000){
+        val timer = object : CountDownTimer(8000,1000){
             override fun  onTick(millisUntilFinished: Long){
 
             }

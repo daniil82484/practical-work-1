@@ -14,6 +14,7 @@ class PatchActivity : AppCompatActivity() {
     fun back(view: View) {
         val intent = Intent(this,SigninActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 }

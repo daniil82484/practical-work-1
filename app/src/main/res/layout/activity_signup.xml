@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_screen"
     tools:context=".SignupActivity">
+
     <!-- scroll -->
     <!--
         <ScrollView
@@ -25,16 +26,16 @@
         </ScrollView>
     -->
 
-        <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="111dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="68dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/logo" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="111dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -44,7 +45,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text"
+
+        android:backgroundTint="@color/green_text"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="Имя"
@@ -70,7 +72,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text"
+
+        android:backgroundTint="@color/green_text"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="Фамилия"
@@ -96,7 +99,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text"
+
+        android:backgroundTint="@color/green_text"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="E-mail"
@@ -122,7 +126,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text"
+
+        android:backgroundTint="@color/green_text"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="Пароль"
@@ -148,7 +153,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text"
+
+        android:backgroundTint="@color/green_text"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="Повторите пароль"
@@ -177,7 +183,7 @@
         android:background="@drawable/red_but"
         android:fontFamily="@font/roboto_bold"
         android:inputType="text"
-        android:onClick="registration"
+        android:onClick="login"
         android:text="Загегистрироваться"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -194,6 +200,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
+
         android:background="@drawable/white_but"
         android:fontFamily="@font/roboto_bold"
         android:inputType="text"
