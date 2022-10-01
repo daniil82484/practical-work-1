@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import java.util.regex.Pattern
 
 class SigninActivity : AppCompatActivity() {
 
     lateinit var email:EditText
     lateinit var pass:EditText
+
+    val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,13 +21,20 @@ class SigninActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         pass = findViewById(R.id.pass)
     }
+    fun emailValid(text: String):Boolean
+    {
+        return Pattern.compile(pattern).matcher(text).matches()
+    }
 
     fun login(view: View) {
         if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty())
         {
-            val intent = Intent(this@SigninActivity,PatchActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (emailValid(email.text.toString()))
+            {
+                val intent = Intent(this@SigninActivity,PatchActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
         else
         {

@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import java.util.regex.Pattern
 
 class SignupActivity : AppCompatActivity() {
     lateinit var name: EditText
@@ -14,6 +15,8 @@ class SignupActivity : AppCompatActivity() {
     lateinit var email: EditText
     lateinit var pass: EditText
     lateinit var pass2: EditText
+
+    val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +28,21 @@ class SignupActivity : AppCompatActivity() {
         pass2 = findViewById(R.id.editTextTextPersonName7)
     }
 
+    fun emailValid(text: String):Boolean
+    {
+        return Pattern.compile(pattern).matcher(text).matches()
+    }
+
     fun login(view: View) {
         if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty() && pass2.text.toString().isNotEmpty() && name.text.toString().isNotEmpty() && surname.text.toString().isNotEmpty())
         {
-            Toast.makeText(this, "Зарегистрироваться", Toast.LENGTH_LONG).show()
-            val intent = Intent(this@SignupActivity,PatchActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (emailValid(email.text.toString()))
+            {
+                Toast.makeText(this, "Зарегистрироваться", Toast.LENGTH_LONG).show()
+                val intent = Intent(this@SignupActivity,PatchActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
         else
         {
