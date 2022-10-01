@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 class SignupActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class SignupActivity : AppCompatActivity() {
     fun login(view: View) {
         if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty() && pass2.text.toString().isNotEmpty() && name.text.toString().isNotEmpty() && surname.text.toString().isNotEmpty())
         {
+            Toast.makeText(this, "Зарегистрироваться", Toast.LENGTH_LONG).show()
             val intent = Intent(this@SignupActivity,PatchActivity::class.java)
             startActivity(intent)
             finish()
