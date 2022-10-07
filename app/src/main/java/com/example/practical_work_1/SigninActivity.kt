@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import java.util.regex.Pattern
 
@@ -31,9 +32,14 @@ class SigninActivity : AppCompatActivity() {
         {
             if (emailValid(email.text.toString()))
             {
+                Toast.makeText(this, "Вход", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@SigninActivity,PatchActivity::class.java)
                 startActivity(intent)
                 finish()
+            }
+            else
+            {
+                Toast.makeText(this, "Поле E-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
             }
         }
         else

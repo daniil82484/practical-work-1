@@ -38,10 +38,14 @@ class SignupActivity : AppCompatActivity() {
         {
             if (emailValid(email.text.toString()))
             {
-                Toast.makeText(this, "Зарегистрироваться", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Регистрация", Toast.LENGTH_LONG).show()
                 val intent = Intent(this@SignupActivity,PatchActivity::class.java)
                 startActivity(intent)
                 finish()
+            }
+            else
+            {
+                Toast.makeText(this, "Поле E-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
             }
         }
         else
