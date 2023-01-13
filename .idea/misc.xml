@@ -15,7 +15,8 @@
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_WorldCinema.xml" value="0.1525" />
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_WorldCinema_round.xml" value="0.1525" />
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1525" />
-        <entry key="app/src/main/res/layout/activity_patch.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_patch.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.4361111111111111" />
       </map>
     </option>
   </component>
