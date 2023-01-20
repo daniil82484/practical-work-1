@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.MediaController
 import android.widget.VideoView
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.RecyclerView
 
 class PatchActivity : AppCompatActivity() {
 
@@ -33,6 +34,11 @@ class PatchActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title="Кино"
 
+        val poster_res:RecyclerView = findViewById(R.id.rec_view)
+        poster_res.adapter = Poster_adapter(this, PosterList().list)
+
+        val poster_res2:RecyclerView = findViewById(R.id.rec_view2)
+        poster_res2.adapter = Poster_adapter(this, PosterList().list)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
