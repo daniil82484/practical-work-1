@@ -38,7 +38,7 @@ class PatchActivity : AppCompatActivity() {
         poster_res.adapter = Poster_adapter(this, PosterList().list)
 
         val poster_res2:RecyclerView = findViewById(R.id.rec_view2)
-        poster_res2.adapter = Poster_adapter(this, PosterList().list)
+        poster_res2.adapter = Poster_adapter2(this, PosterList2().list2)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
