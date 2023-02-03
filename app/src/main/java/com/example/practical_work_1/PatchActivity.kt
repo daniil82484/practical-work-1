@@ -49,18 +49,21 @@ class PatchActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            android.R.id.home->{
+/*            android.R.id.home->{
                 val intent = Intent(this, SigninActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            R.id.one->{
+            }*/
+            R.id.icHome->{
                 Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
             }
-            R.id.two->{
+            R.id.icPod->{
                 Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
             }
-            R.id.three->{
+            R.id.icCol->{
+                Toast.makeText(this, "3", Toast.LENGTH_SHORT).show()
+            }
+            R.id.icSet->{
                 Toast.makeText(this, "3", Toast.LENGTH_SHORT).show()
             }
         }
