@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu
+    android:id="@+id/meneee"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/one"
-        android:title="one"
-        android:icon="@mipmap/ic_launcher_round"
-        app:showAsAction="ifRoom"
+        android:id="@+id/icHome"
+        android:icon="@drawable/ic_glyph1"
+        android:title="Главное"
         android:orderInCategory="1"/>
     <item
-        android:id="@+id/two"
-        android:title="two"
-        android:icon="@mipmap/ic_launcher_round"
-        app:showAsAction="ifRoom"
+        android:id="@+id/icPod"
+        android:icon="@drawable/ic_glyph2"
+        android:title="Подборка"
         android:orderInCategory="2"/>
     <item
-        android:id="@+id/three"
-        android:title="three"
-        android:icon="@mipmap/ic_launcher_round"
-        app:showAsAction="ifRoom"
+        android:id="@+id/icCol"
+        android:icon="@drawable/ic_glyph3"
+        android:title="Коллекции"
         android:orderInCategory="3"/>
+    <item
+        android:id="@+id/icSet"
+        android:icon="@drawable/ic_glyph4"
+        android:title="Профиль"
+        android:orderInCategory="4"/>
+
+    <!--
+    android:icon="@mipmap/ic_launcher_round"
+    -->
 </menu>
