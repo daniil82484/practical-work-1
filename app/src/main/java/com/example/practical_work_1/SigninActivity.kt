@@ -13,7 +13,7 @@ import java.util.regex.Pattern
 
 class SigninActivity : AppCompatActivity() {
 
-    var preff: SharedPreferences?=null
+    var preff: SharedPreferences?= null
     lateinit var email:EditText
     lateinit var pass:EditText
     lateinit var check:CheckBox
@@ -51,7 +51,7 @@ class SigninActivity : AppCompatActivity() {
         editor?.clear()
         editor?.apply()
     }
-    fun seve22(view: View)
+    fun login(view: View)
     {
         val value:String = email.text.toString()
         val value2:String = pass.text.toString()
@@ -65,7 +65,7 @@ class SigninActivity : AppCompatActivity() {
             deleteAll()
         }
 
-        val inten = Intent(this, PatchActivity::class.java)
+        val intent = Intent(this,PatchActivity::class.java)
         startActivity(intent)
     }
 
@@ -74,7 +74,7 @@ class SigninActivity : AppCompatActivity() {
         return Pattern.compile(pattern).matcher(text).matches()
     }
 
-    fun login(view: View) {
+    fun login123(view: View) {
         if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty())
         {
             if (emailValid(email.text.toString()))
