@@ -26,16 +26,18 @@
             android:exported="false" />
         <activity
             android:name=".SigninActivity"
-            android:exported="false" />
-        <activity
-            android:theme="@style/Theme.MaterialComponents.StatusBar"
-            android:name=".MainScreenActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/Theme.MaterialComponents.StatusBar"
+            android:name=".MainScreenActivity"
+            android:exported="false">
+
         </activity>
 
         <meta-data
