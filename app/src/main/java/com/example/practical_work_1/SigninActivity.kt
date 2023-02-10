@@ -91,7 +91,7 @@ class SigninActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Вход", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this,PatchActivity::class.java)
+                val intent = Intent(this,MainProfileActivity::class.java)
                 startActivity(intent)
 
                 /*
@@ -102,7 +102,7 @@ class SigninActivity : AppCompatActivity() {
 
             }
             else{
-                Toast.makeText(this, "некорректные данные", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Некорректные данные", Toast.LENGTH_SHORT).show()
             }
         }
         else
