@@ -14,6 +14,7 @@ import java.util.regex.Pattern
 class SigninActivity : AppCompatActivity() {
 
     var preff: SharedPreferences?= null
+    var preff2: SharedPreferences?= null
     lateinit var email:EditText
     lateinit var pass:EditText
     lateinit var check:CheckBox
@@ -27,31 +28,33 @@ class SigninActivity : AppCompatActivity() {
         pass = findViewById(R.id.pass)
         check = findViewById(R.id.checkBox)
         preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
-        check.isChecked = preff?.getBoolean("key3", false)?:false
-        email.setText(preff?.getString("key1", ""))
-        pass.setText(preff?.getString("key2", ""))
+        preff2 = getSharedPreferences("TABLEE2", MODE_PRIVATE)
+        check.isChecked = preff2?.getBoolean("key3", false)?:false
+        email.setText(preff2?.getString("key-login-email", ""))
+        pass.setText(preff2?.getString("key-login-pass", ""))
+
     }
 
     fun sevestate(check:Boolean)
     {
-        val editor = preff?.edit()
+        val editor = preff2?.edit()
         editor?.putBoolean("key3", check)
         editor?.apply()
     }
     fun saveData(mail:String, pass:String)
     {
-        val editor = preff?.edit()
-        editor?.putString("key1", mail)
-        editor?.putString("key2", pass)
+        val editor = preff2?.edit()
+        editor?.putString("key-login-email", mail)
+        editor?.putString("key-login-pass", pass)
         editor?.apply()
     }
     fun deleteAll()
     {
-        val editor = preff?.edit()
+        val editor = preff2?.edit()
         editor?.clear()
         editor?.apply()
     }
-    fun login(view: View)
+    fun login1(view: View)
     {
         val value:String = email.text.toString()
         val value2:String = pass.text.toString()
@@ -69,24 +72,37 @@ class SigninActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun emailValid(text: String):Boolean
-    {
-        return Pattern.compile(pattern).matcher(text).matches()
-    }
+    fun login(view: View) {
+        val value:String = email.text.toString()
+        val value2:String = pass.text.toString()
+        val checkboxstate:Boolean = check.isChecked
 
-    fun login123(view: View) {
-        if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty())
+        if (value != "" && value2 != "")
         {
-            if (emailValid(email.text.toString()))
-            {
+            if(value == preff?.getString("key1", "")  && value2 == preff?.getString("key2", "")){
+                if (checkboxstate == true){
+                    saveData(value,value2)
+                    sevestate(checkboxstate)
+                }
+                else
+                {
+                    deleteAll()
+                }
+
                 Toast.makeText(this, "Вход", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this@SigninActivity,PatchActivity::class.java)
+
+                val intent = Intent(this,PatchActivity::class.java)
                 startActivity(intent)
-                finish()
+
+                /*
+                    val intent = Intent(this@SigninActivity,PatchActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                */
+
             }
-            else
-            {
-                Toast.makeText(this, "Поле E-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
+            else{
+                Toast.makeText(this, "некорректные данные", Toast.LENGTH_SHORT).show()
             }
         }
         else

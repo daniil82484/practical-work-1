@@ -21,7 +21,7 @@
         <entry key="app/src/main/res/drawable/red_but.xml" value="0.3565" />
         <entry key="app/src/main/res/drawable/white_but.xml" value="0.3565" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.43246753246753245" />
-        <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patch.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signin.xml" value="0.4381578947368421" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.4361111111111111" />
@@ -36,10 +36,11 @@
         <entry key="app/src/main/res/layout/item.xml" value="0.4316017316017316" />
         <entry key="app/src/main/res/layout/item_2.xml" value="0.375" />
         <entry key="app/src/main/res/menu/menu1.xml" value="0.4316017316017316" />
+        <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.23333333333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

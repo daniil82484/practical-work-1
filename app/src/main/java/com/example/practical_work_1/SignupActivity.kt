@@ -1,9 +1,11 @@
 package com.example.practical_work_1
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +18,8 @@ class SignupActivity : AppCompatActivity() {
     lateinit var pass: EditText
     lateinit var pass2: EditText
 
+    var preff: SharedPreferences?= null
+
     val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +30,37 @@ class SignupActivity : AppCompatActivity() {
         email = findViewById(R.id.editTextTextPersonName5)
         pass = findViewById(R.id.editTextTextPersonName6)
         pass2 = findViewById(R.id.editTextTextPersonName7)
+
+        preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
+/*
+        email.setText(preff?.getString("key1", ""))
+        pass.setText(preff?.getString("key2", ""))
+        name.setText(preff?.getString("key4", ""))
+        surname.setText(preff?.getString("key5", ""))
+*/
+    }
+
+    fun saveData(mail:String, pass:String, name:String, surname:String)
+    {
+        val editor = preff?.edit()
+        editor?.putString("key1", mail)
+        editor?.putString("key2", pass)
+        editor?.putString("key4", name)
+        editor?.putString("key5", surname)
+        editor?.apply()
+    }
+    fun login1(view: View)
+    {
+        val value:String = email.text.toString()
+        val value2:String = pass.text.toString()
+        val value3:String = name.text.toString()
+        val value4:String = surname.text.toString()
+
+        saveData(value,value2,value3,value4)
+
+
+        val intent = Intent(this,PatchActivity::class.java)
+        startActivity(intent)
     }
 
     fun emailValid(text: String):Boolean
@@ -34,12 +69,19 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun login(view: View) {
+        val value:String = email.text.toString()
+        val value2:String = pass.text.toString()
+        val value3:String = name.text.toString()
+        val value4:String = surname.text.toString()
+
         if (email.text.toString().isNotEmpty() && pass.text.toString().isNotEmpty() && pass2.text.toString().isNotEmpty() && name.text.toString().isNotEmpty() && surname.text.toString().isNotEmpty())
         {
             if (emailValid(email.text.toString()))
             {
+                saveData(value,value2,value3,value4)
+
                 Toast.makeText(this, "Регистрация", Toast.LENGTH_LONG).show()
-                val intent = Intent(this@SignupActivity,PatchActivity::class.java)
+                val intent = Intent(this@SignupActivity,SigninActivity::class.java)
                 startActivity(intent)
                 finish()
             }
