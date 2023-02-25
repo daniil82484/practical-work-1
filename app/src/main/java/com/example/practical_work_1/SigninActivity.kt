@@ -14,7 +14,6 @@ import java.util.regex.Pattern
 class SigninActivity : AppCompatActivity() {
 
     var preff: SharedPreferences?= null
-    var preff2: SharedPreferences?= null
     lateinit var email:EditText
     lateinit var pass:EditText
     lateinit var check:CheckBox
@@ -28,49 +27,26 @@ class SigninActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         pass = findViewById(R.id.pass)
         check = findViewById(R.id.checkBox)
-        preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
-        preff2 = getSharedPreferences("TABLEE2", MODE_PRIVATE)
-        check.isChecked = preff2?.getBoolean("key3", false)?:false
-        email.setText(preff2?.getString("key-login-email", ""))
-        pass.setText(preff2?.getString("key-login-pass", ""))
-
+        preff = getSharedPreferences("TABLEE2", MODE_PRIVATE)
+        check.isChecked = preff?.getBoolean("key3", false)?:false
+        email.setText(preff?.getString("key-login-email", ""))
+        pass.setText(preff?.getString("key-login-pass", ""))
     }
 
-    fun sevestate(check:Boolean)
+    fun saveData(mail:String, pass:String, check:Boolean)
     {
-        val editor = preff2?.edit()
+        val editor = preff?.edit()
+        editor?.putString("key-login-email", mail)
+        editor?.putString("key-login-pass", pass)
         editor?.putBoolean("key3", check)
         editor?.apply()
     }
-    fun saveData(mail:String, pass:String)
-    {
-        val editor = preff2?.edit()
-        editor?.putString("key-login-email", mail)
-        editor?.putString("key-login-pass", pass)
-        editor?.apply()
-    }
+
     fun deleteAll()
     {
-        val editor = preff2?.edit()
+        val editor = preff?.edit()
         editor?.clear()
         editor?.apply()
-    }
-    fun login1(view: View)
-    {
-        val value:String = email.text.toString()
-        val value2:String = pass.text.toString()
-        val checkboxstate:Boolean = check.isChecked
-        if (checkboxstate == true){
-            saveData(value,value2)
-            sevestate(checkboxstate)
-        }
-        else
-        {
-            deleteAll()
-        }
-
-        val intent = Intent(this,PatchActivity::class.java)
-        startActivity(intent)
     }
 
     fun login(view: View) {
@@ -80,10 +56,9 @@ class SigninActivity : AppCompatActivity() {
 
         if (value != "" && value2 != "")
         {
-            if(value == preff?.getString("key1", "")  && value2 == preff?.getString("key2", "")){
+            if(value == preff?.getString("key-login-email", "")  && value2 == preff?.getString("key-login-pass", "")){
                 if (checkboxstate == true){
-                    saveData(value,value2)
-                    sevestate(checkboxstate)
+                    saveData(value,value2,checkboxstate)
                 }
                 else
                 {

@@ -31,7 +31,7 @@ class SignupActivity : AppCompatActivity() {
         pass = findViewById(R.id.editTextTextPersonName6)
         pass2 = findViewById(R.id.editTextTextPersonName7)
 
-        preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
+        preff = getSharedPreferences("TABLEE2", MODE_PRIVATE)
 /*
         email.setText(preff?.getString("key1", ""))
         pass.setText(preff?.getString("key2", ""))
@@ -43,8 +43,8 @@ class SignupActivity : AppCompatActivity() {
     fun saveData(mail:String, pass:String, name:String, surname:String)
     {
         val editor = preff?.edit()
-        editor?.putString("key1", mail)
-        editor?.putString("key2", pass)
+        editor?.putString("key-login-email", mail)
+        editor?.putString("key-login-pass", pass)
         editor?.putString("key4", name)
         editor?.putString("key5", surname)
         editor?.apply()
