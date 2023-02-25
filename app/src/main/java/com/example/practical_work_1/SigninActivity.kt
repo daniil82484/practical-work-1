@@ -22,6 +22,7 @@ class SigninActivity : AppCompatActivity() {
     val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
         email = findViewById(R.id.email)

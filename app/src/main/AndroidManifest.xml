@@ -28,6 +28,7 @@
             android:name=".SignupActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/AppTheme.Launcher"
             android:name=".SigninActivity"
             android:exported="true">
             <intent-filter>
