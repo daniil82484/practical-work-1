@@ -18,7 +18,7 @@ class SigninActivity : AppCompatActivity() {
     lateinit var pass:EditText
     lateinit var check:CheckBox
 
-    val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
+    // val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -27,7 +27,7 @@ class SigninActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         pass = findViewById(R.id.pass)
         check = findViewById(R.id.checkBox)
-        preff = getSharedPreferences("TABLEE2", MODE_PRIVATE)
+        preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
         check.isChecked = preff?.getBoolean("key3", false)?:false
         email.setText(preff?.getString("key-login-email", ""))
         pass.setText(preff?.getString("key-login-pass", ""))
@@ -45,7 +45,8 @@ class SigninActivity : AppCompatActivity() {
     fun deleteAll()
     {
         val editor = preff?.edit()
-        editor?.clear()
+        editor?.remove("key-login-email")
+        editor?.remove("key-login-pass")
         editor?.apply()
     }
 
@@ -56,7 +57,7 @@ class SigninActivity : AppCompatActivity() {
 
         if (value != "" && value2 != "")
         {
-            if(value == preff?.getString("key-login-email", "")  && value2 == preff?.getString("key-login-pass", "")){
+            if(value == preff?.getString("key1", "")  && value2 == preff?.getString("key2", "")){
                 if (checkboxstate == true){
                     saveData(value,value2,checkboxstate)
                 }
