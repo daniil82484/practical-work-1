@@ -118,6 +118,7 @@
         android:drawableStart="@drawable/check"
         android:drawablePadding="20dp"
         android:fontFamily="@font/roboto"
+        android:onClick="checkbox"
         android:text="Запомнить данные"
         android:textColor="@color/white"
         android:textSize="14sp"

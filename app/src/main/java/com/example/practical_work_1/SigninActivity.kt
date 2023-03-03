@@ -98,4 +98,10 @@ class SigninActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+    fun checkbox(view: View) {
+        if(check.isChecked == preff?.getBoolean("key3", false)){
+            Toast.makeText(this, "!!!", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
