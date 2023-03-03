@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/layout/activity_mainscreen2.xml" value="0.4342105263157895" />
         <entry key="app/src/main/res/layout/activity_patch.xml" value="0.2111111111111111" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.4342105263157895" />
-        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.4381578947368421" />
+        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.4361111111111111" />
         <entry key="app/src/main/res/layout/fragment_1.xml" value="0.43246753246753245" />
         <entry key="app/src/main/res/layout/fragment_2.xml" value="0.42077922077922075" />
