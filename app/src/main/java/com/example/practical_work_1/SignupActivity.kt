@@ -32,12 +32,6 @@ class SignupActivity : AppCompatActivity() {
         pass2 = findViewById(R.id.editTextTextPersonName7)
 
         preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
-/*
-        email.setText(preff?.getString("key1", ""))
-        pass.setText(preff?.getString("key2", ""))
-        name.setText(preff?.getString("key4", ""))
-        surname.setText(preff?.getString("key5", ""))
-*/
     }
 
     fun saveData(mail:String, pass:String, name:String, surname:String)
