@@ -17,7 +17,7 @@ class MainProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_profile)
 
-        preff = getSharedPreferences("TABLEE2", MODE_PRIVATE)
+        preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
 
         tb = findViewById(R.id.toolbar)
         setSupportActionBar(this.tb)
