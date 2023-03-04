@@ -106,6 +106,8 @@ class SigninActivity : AppCompatActivity() {
         val editor = preff?.edit()
         if(check.isChecked == false){
             editor?.putBoolean("key3", false)
+            editor?.remove("key-login-email")
+            editor?.remove("key-login-pass")
         }
         else{
             editor?.putBoolean("key3", true)
