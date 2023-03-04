@@ -31,14 +31,18 @@ class SigninActivity : AppCompatActivity() {
         check.isChecked = preff?.getBoolean("key3", false)?:false
         email.setText(preff?.getString("key-login-email", ""))
         pass.setText(preff?.getString("key-login-pass", ""))
+
+        if (preff?.getBoolean("key3", true) == true){
+            val intent = Intent(this,MainProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
-    fun saveData(mail:String, pass:String, check:Boolean)
+    fun saveData(mail:String, pass:String)
     {
         val editor = preff?.edit()
         editor?.putString("key-login-email", mail)
         editor?.putString("key-login-pass", pass)
-        editor?.putBoolean("key3", check)
         editor?.apply()
     }
 
@@ -53,13 +57,13 @@ class SigninActivity : AppCompatActivity() {
     fun login(view: View) {
         val value:String = email.text.toString()
         val value2:String = pass.text.toString()
-        val checkboxstate:Boolean = check.isChecked
+        // val checkboxstate:Boolean = check.isChecked
 
         if (value != "" && value2 != "")
         {
             if(value == preff?.getString("key1", "")  && value2 == preff?.getString("key2", "")){
-                if (checkboxstate == true){
-                    saveData(value,value2,checkboxstate)
+                if (preff?.getBoolean("key3",true) == true){
+                    saveData(value,value2)
                 }
                 else
                 {
@@ -90,7 +94,6 @@ class SigninActivity : AppCompatActivity() {
                 .create()
                 .show()
         }
-
     }
 
     fun registration(view: View) {
@@ -100,8 +103,13 @@ class SigninActivity : AppCompatActivity() {
     }
 
     fun checkbox(view: View) {
-        if(check.isChecked == preff?.getBoolean("key3", false)){
-            Toast.makeText(this, "!!!", Toast.LENGTH_SHORT).show()
+        val editor = preff?.edit()
+        if(check.isChecked == false){
+            editor?.putBoolean("key3", false)
         }
+        else{
+            editor?.putBoolean("key3", true)
+        }
+        editor?.apply()
     }
 }
