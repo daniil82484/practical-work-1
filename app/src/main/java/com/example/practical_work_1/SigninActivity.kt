@@ -21,7 +21,7 @@ class SigninActivity : AppCompatActivity() {
     // val pattern = ("[a-z]{1,100}"+"@"+"[a-z]{1,6}"+"\\."+"[a-z]{1,5}")
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
+        // setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
         email = findViewById(R.id.email)
@@ -32,10 +32,7 @@ class SigninActivity : AppCompatActivity() {
         email.setText(preff?.getString("key-login-email", ""))
         pass.setText(preff?.getString("key-login-pass", ""))
 
-        if (preff?.getBoolean("key3", true) == true){
-            val intent = Intent(this,MainProfileActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 
     fun saveData(mail:String, pass:String)
