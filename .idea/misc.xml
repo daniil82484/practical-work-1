@@ -16,10 +16,13 @@
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_WorldCinema.xml" value="0.1525" />
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_WorldCinema_round.xml" value="0.1525" />
         <entry key="..\:/AndroidStudio-projects/practicalwork1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1525" />
+        <entry key="app/src/main/res/drawable-v23/tab_no_act.xml" value="0.2655" />
+        <entry key="app/src/main/res/drawable/check.xml" value="0.2655" />
         <entry key="app/src/main/res/drawable/coloricon.xml" value="0.3295" />
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.2595" />
         <entry key="app/src/main/res/drawable/red_but.xml" value="0.3565" />
         <entry key="app/src/main/res/drawable/tab_act.xml" value="0.2655" />
+        <entry key="app/src/main/res/drawable/tab_check.xml" value="0.2655" />
         <entry key="app/src/main/res/drawable/tab_no_act.xml" value="0.2655" />
         <entry key="app/src/main/res/drawable/white_but.xml" value="0.3565" />
         <entry key="app/src/main/res/layout/activity_drawer.xml" value="0.1" />

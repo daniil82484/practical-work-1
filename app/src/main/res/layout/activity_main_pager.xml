@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabBackground="@drawable/tab_no_act"
+        app:tabBackground="@drawable/tab_check"
         app:tabGravity="center"
         android:translationY="16dp"
         app:tabIndicatorHeight="0dp" />
