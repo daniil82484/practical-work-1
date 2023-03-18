@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         preff = getSharedPreferences("TABLEE", MODE_PRIVATE)
 
         if (preff?.getBoolean("key3", true) == true){
-            val intent = Intent(this,MainProfileActivity::class.java)
+            val intent = Intent(this,MainPagerActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
         // val timer = object : CountDownTimer(4000,1000){
         //     override fun  onTick(millisUntilFinished: Long){
         //
