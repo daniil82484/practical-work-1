@@ -1,27 +1,23 @@
 package com.example.practical_work_1
 
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.practical_work_1.databinding.ActivityMainProfileBinding
+import com.example.practical_work_1.databinding.ActivityDrawerBinding
 
-class MainProfileActivity : AppCompatActivity() {
-
+class Drawer : AppCompatActivity() {
     private lateinit var conf:AppBarConfiguration
     private lateinit var navContr:NavController
-    private lateinit var binding:ActivityMainProfileBinding
+    private lateinit var binding:ActivityDrawerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainProfileBinding.inflate(layoutInflater)
+        binding = ActivityDrawerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.itb.toolbar)
 
@@ -30,8 +26,7 @@ class MainProfileActivity : AppCompatActivity() {
             setOf(
                 R.id.item_menu_1,
                 R.id.item_menu_2,
-                R.id.item_menu_3,
-                R.id.item_menu_4),
+                R.id.item_menu_3),
             binding.drawer
         )
         setupActionBarWithNavController(navContr, conf)
@@ -41,5 +36,4 @@ class MainProfileActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navContr.navigateUp(conf) || super.onSupportNavigateUp()
     }
-
 }

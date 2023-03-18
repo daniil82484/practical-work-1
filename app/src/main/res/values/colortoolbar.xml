@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="ToolTheme" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorPrimary">@color/color_screen</item>
+        <item name="colorPrimary">@color/fontab</item>
         <item name="colorControlNormal">@color/white</item>
     </style>
 </resources>
