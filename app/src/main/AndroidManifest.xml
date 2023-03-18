@@ -20,10 +20,10 @@
             android:exported="false" />
         <activity
             android:name=".Drawer"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".MainProfileActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,11 +42,11 @@
             android:exported="false" />
         <activity
             android:name=".SigninActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".MainScreenActivity"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.StatusBar"></activity>
+            android:theme="@style/Theme.MaterialComponents.StatusBar"/>
 
         <meta-data
             android:name="preloaded_fonts"
